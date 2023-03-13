@@ -9,7 +9,7 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="styleTest.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -18,33 +18,43 @@
     <div class="twinkling"></div>
     <div class="clouds"></div>
 
-    <header class="header">
-        <a href="" class="logo">Maricas <em>Portfolio</em></a>
+       <header class="header">
+        <div class="logo2"><b>M<span>A</span>RI<span>C</span>A | <em>portfolio</em></b></div> 
+        <i class='bx-menu' id="menu-icon"></i>   
         <nav class="navbar">
-           <button class="button glow-effect">
-            <a href="index.html" class="active">Home</a>
-            <svg class="glow-container">
-            <rect pathLength="100" class="glow-blur"></rect>
-            <rect pathLength="100" class="glow-line"></rect>
-        </svg>
-        </button> 
-        <button class="button glow-effect">
-        <a href="portfolio.html">Portfolio</a>
-        <svg class="glow-container">
-            <rect pathLength="100" class="glow-blur"></rect>
-            <rect pathLength="100" class="glow-line"></rect>
-        </svg>
-        </button> 
-        <button class="button glow-effect">
-        <a href="contact.html">Contact</a>
-        <svg class="glow-container">
-            <rect pathLength="100" class="glow-blur"></rect>
-            <rect pathLength="100" class="glow-line"></rect>
-        </svg>
-        </button> 
-        </nav>
-    </header> 
+            <a href="index.html" class="button glow-effect active">
+                Home
+                <svg width="100" height="100" class="glow-container">
+                    <rect width="100" height="100" class="glow-blur"></rect>
+                    <rect width="100" height="100" class="glow-line"></rect>
+                </svg>
+            </a> 
+            <a href="portfolio.html" class="button glow-effect">
+                Portfolio
+                <svg width="100" height="100" class="glow-container">
+                    <rect width="100" height="100" class="glow-blur"></rect>
+                    <rect width="100" height="100" class="glow-line"></rect>
+                </svg>
+            </a> 
+            <a href="contact.html" class="button glow-effect">
+                Contact
+                <svg width="100" height="100" class="glow-container">
+                    <rect width="100" height="100" class="glow-blur"></rect>
+                    <rect width="100" height="100" class="glow-line"></rect>
+                </svg>
+            </a> 
+        </nav> 
+    </header>
 
+    <div class="social">
+        <span class="socialBtn">
+            <span class="socialText">Socials</span>
+        </span>
+        <div class="iconBox">
+            <a href="https://github.com/mabj2201" target="_blank"><i class='bx bxl-github' ></i></a>
+            <a href="https://www.linkedin.com/in/marica-bj%C3%B6rklund-403778251/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+        </div>
+    </div>
     <div class="watermark">MARICA</div>
     <div class="card">
         <div class="circle">  </div>
@@ -53,9 +63,10 @@
                 <h3>Hej👋, Jag är </h3>
                 <h1>Marica Björklund</h1>
                 <h3>Och jag studerar till <span>Javautvecklare</span></h3>
-                <p>Här är en kort beskrivning om mig själv. </p>
+                <div class="typing">
+                    är är en kort beskrivning om mig själv. 
+                </div>
                 <div class="social-media">
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
                     <a href="https://github.com/mabj2201" target="_blank"><i class='bx bxl-github' ></i></a>
                     <a href="https://www.linkedin.com/in/marica-bj%C3%B6rklund-403778251/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
                 </div>
@@ -64,11 +75,11 @@
         </div>
 
     </div>
-<hr>
+
     <footer>
         <hr>
         <p id="copyright">Copyright &copy; 2023 - Marica Björklund- marica.bjorklund@yh.nackademin.se</p>
-    </footer>
+        </footer>
 
 </body>
 

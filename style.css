@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url(//fonts.googleapis.com/css?family=Vibur);
 
 
 *{
@@ -9,53 +10,48 @@
     text-decoration: none;  
 }
 
-
-
 body{
      display: flex; 
      justify-content: center; 
      align-items: center; 
      min-height: 100vh; 
-    /* background-color: #20142c;  */
  }
 
-
-/* background */
-
-html{
+ html{
     height: 100%;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
 
+/* background-------------------------------------------- */
 
 @keyframes move-clouds-back {
-    from{background-position: 0 0;}
-    to {background-position: 10000px 0;}
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
 }
 
-.stars, .twinkling, .clouds {
+.stars, 
+.twinkling,
+ .clouds {
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    display: block;
 }
 
 .stars {
     background: transparent url(images/stars.png) repeat top center;
     z-index: 0;
 }
-
-/* .twinkling {
-    background: transparent url(images/twinkling.png) repeat top center;
-    z-index: 1;
-    animation: move-twink-back 200s linear infinite;
-} */
 
 .clouds {
     background: transparent url(images/clouds.png) repeat top center;
@@ -64,47 +60,162 @@ html{
     animation: move-clouds-back 200s linear infinite;
 }
 
-
-
-
-
-
-hr{
+ hr{
  border: transparent;
 
-}
+} 
 
-/* Header */
+/* Header----------------------------------- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem 3%;
-    /* background: #20142c; */
     display: flex;
     justify-content: space-between;
-    /* box-shadow: 0 0 4rem #c72c41; */
-    /* z-index: 1; */
 }
 
-.logo {
+ .logo {
     font-size: 2.5em;
     color: #20142c;
     font-weight: 600;
     cursor: default; 
+} 
+.logo2 b{
+    font: 400 5vh 'Vibur';
+    color: #f99E4C;
+    text-shadow:  0 -40px 100px, 0 0 2px, 0 0 1em #f36f38, 0 0 0.5em #f36f38, 0 0 0.1em #f36f38, 0 10px 3px #000;
+}
+
+.logo2 b span{
+    font: 'Vibur';
+    animation: blinka linear infinite 2s;
+}
+.logo2 b span:nth-of-type(2){
+   
+    animation: blinka linear infinite 3s;
+}
+
+
+@keyframes blinka{
+    78% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    79% {
+        color: #333;
+    }
+    80%{
+     text-shadow: none;
+    }
+    81%{
+        color: inherit;
+        text-shadow: inherit;
+    }
+    82%{
+        color: #333;
+        text-shadow: none;
+    }
+    83%{
+        color: inherit;
+        text-shadow: inherit;
+    }
+    92% {
+        color: #333;
+        text-shadow: none;
+    }
+    92.5%{
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+
+.social{
+    position: fixed;
+    top: 50%;
+    left: -65px;
+    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 240px;
+    height: 72px;
+    background-color: transparent;
+    border: 1px solid #cc2a49;
+    border-radius: 80px;
+    padding: 0 18px;
+    box-shadow: 0 0 1rem #cc2a49;
+    transition: all .3s ease-in-out;
+    transition: 0.5s;
 
 }
 
+
+.social:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+.socialBtn{
+    position: absolute;
+    z-index: 20;
+    width: 240px;
+    height: 72px;
+    border-radius: 80px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 68px;
+    letter-spacing: 2px;
+    color: #cc2a49;
+    padding: 0 18px;
+    transition: all 1.2 ease;
+
+}
+
+
+
+.socialBtn+.iconBox i{
+    opacity: 0;
+}
+
+.socialText{
+    writing-mode: vertical-rl;
+    word-break: break-all;
+    height: 10px;
+    font-size: 1.2rem;
+    line-height: 28px;
+ 
+}
+
+.iconBox {
+transform: rotate(-90deg);
+display: flex;
+flex-direction: column-reverse ;
+border-radius: 80px
+}
+
+.iconBox i{
+    opacity: 0;
+    margin: 12px 0;
+    color: #cc2a49;
+    font-size: 3em;
+}
+
+
+.social:hover span{
+    transition-delay: 0.25s;
+    transform: translateX(-280px);
+}
+
+.social:hover i{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
 .navbar a {
-    /* font-size: 1.9rem;
-
-    font-weight: 600;
-
-    transition: 0.3s; */
     color:#ffbc00;
-
-
 }
 
 .button{
@@ -121,17 +232,17 @@ hr{
 .glow-effect {
     --conainer-offset: 90px;
     position: relative;
+
 }
 
 .glow-container{
+    stroke-dasharray: 100;
     pointer-events: none;
     position: absolute;
     inset: calc(var(--conainer-offset)/ -2);
     width: calc(100% + 90px);
     height: calc(100% + 90px);
     opacity: 0;
-    stroke-linecap: round;
-    /* outline: 3px solid blue; */
 }
 
 .glow-blur,
@@ -144,7 +255,9 @@ hr{
     fill: transparent;
     stroke: white;
     stroke-width: 5px;
-    stroke-dasharray: 20px 30px;
+    stroke-dasharray: 100px 30px;
+ 
+    stroke-dashoffset: 0;
  
 }
 
@@ -166,7 +279,7 @@ transition: stroke-dashoffset 1200ms;
 }
 
 .glow-effect:is(:hover, :focus) .glow-container{
-    animation: glow-visibility 1200ms;
+    animation: glow-visibility 1800ms;
 
 }
 
@@ -181,7 +294,7 @@ transition: stroke-dashoffset 1200ms;
     color: #f99E4C;
 }
 
-/* Framsida */
+/* Framsida--------------------------------------- */
 .card {
     position: relative;
     width: 900px;
@@ -191,6 +304,8 @@ transition: stroke-dashoffset 1200ms;
     display: flex; 
     align-items: center; 
     transition: 0.5s;
+    transform: translateY(0px);
+    animation: float 6s ease-in-out infinite;
 }
 
 .card .circle {
@@ -201,18 +316,35 @@ transition: stroke-dashoffset 1200ms;
     height: 100%;
     border-radius: 50px;
     overflow: hidden;
+
+    overflow: hidden;
+
+}
+
+@keyframes float{
+    0% {
+ 
+		transform: translatey(0px);
+    }
+    50%{
+      
+		transform: translatey(-20px);
+    }
+    100%{
+     
+		transform: translatey(0px);
+    }
 }
 
 .card .circle::before {
     content: '';
     position: absolute;
-    /* top: 0;
-    left: 0; */
     width: 100%;
     height: 100%;
     background: #EE4540;
     clip-path: circle(220px at center);
     transition: 0.5s;
+    
 }
 
 .card:hover .circle:before {
@@ -226,8 +358,8 @@ transition: stroke-dashoffset 1200ms;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 550px;
-    /* pointer-events: none; */
     transition: 0.5s;
+    
 }
 .card:hover img {
     left: 82%;
@@ -250,9 +382,28 @@ transition: stroke-dashoffset 1200ms;
     visibility: visible;
 }
 
+.typing{
+    width: 30.5ch ;
+    animation: typing 2s steps(30), blink .8s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 .btn{
     font-size: 1.6rem;
-    /* cursor: pointer; */
     color: #cc2a49;
     border: #cc2a49 0.125em solid;
     padding: 0.25em 1em;
@@ -272,18 +423,15 @@ transition: stroke-dashoffset 1200ms;
     background: #cc2a49;
     color: #f99E4C;
     box-shadow: 0 0 1em #cc2a49; 
+    transition: 0.5s ease;
 }
 
 .btn::after {
     content: '';
     position: absolute;
-    /* top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0; */
     box-shadow: 0 0 1em 0.5em #cc2a49;
     opacity: 0;
-    /* transition: opacity 100ms linear; */
+    transition: 0.5s ease;
 }
 
 .btn:hover::after {
@@ -319,8 +467,8 @@ transition: stroke-dashoffset 1200ms;
     color: #ef4646;
     box-shadow: 0 0 1rem #cc2a49;
 }
-/* PORTFOLIO */
 
+/* PORTFOLIO -------------------------------------------*/
 
 .container{
     position: relative;
@@ -334,8 +482,6 @@ transition: stroke-dashoffset 1200ms;
 
  .container .box {
     position: relative;
-    /* width: 320px;
-    height: 400px; */
     width: 370px;
     height: 450px;
     color: #fff;
@@ -434,70 +580,76 @@ transition: stroke-dashoffset 1200ms;
 
  }
 
-  /* CONTACT */
+
+
+  /* CONTACT ---------------------------------------*/
 
    .card2 {
     position: relative;
-    width: 500px;
-    height: 250px;
+    width: 800px;
+    height: 450px;
     background: linear-gradient(15deg, #ffbc00, #ff0058);
     border-radius: /*50px*/ 2em;
     display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 0 3em #cc2a49;
     transform: perspective(10em) rotateX(40deg) scale(0.8, 0.35);
     transition: 0.5s;
+    opacity: 40%;
 
   }
 
-  .card2:hover {
-    position: relative;
-    width: 1000px;
-    height: 550px;
-    background: linear-gradient(15deg, #ffbc00, #ff0058);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 9em #cc2a49;
-    transform: translateY(20px);
+  
 
-  }
-
-
-  .content-contact h3 {
+  .card2 .content-contact h3 {
+    position: static;
     color: #20142c;
-    padding-left: 30px;
     font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+    margin-left: 2rem;
     text-shadow:
     0 0 0.45em #cc2a49;
+ 
   }
 
-  .content-contact h1 {
+ .card2 .content-contact  h1 {
 
+    position: static;
     color: #20142c;
-    padding-left: 30px;
     font-size: 30px;  
     font-weight: 100px;
     text-shadow:
     0 0 0.45em #cc2a49;
+    margin-top: 7rem;
+    margin-left: 7rem;
+    left: 30px;
+
+
   } 
 
-  iframe {
+   iframe {
     width: 41%;
     height: 100%;
-    left: 100px;
+    left: 61%;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    position: relative;
+    position: absolute;
+    
+  } 
+  .card2:hover{
+    transform: rotateY(20deg);
+    opacity: 100%;
+  }
   
+  .card2:hover .content-contact {
+    opacity: 100%; 
+    transform: rotateY(0deg);
   }
 
+ 
+/* Botten -------------------------------------- */
 
-/* Botten */
-
-  footer{
+   footer{    
     height: 30px;
     width: 100%;
     background-color: #f36f38;
@@ -507,13 +659,14 @@ transition: stroke-dashoffset 1200ms;
     bottom: 0.8%;
     position: fixed;
     box-shadow: 0 0  2rem #f36f38;
- }
+   }
+
 
  .watermark {
     position: fixed;
     font-size: 8rem;
     font-weight: bolder;
-    font-family: poppins;
+    font-family: 'poppins';
     opacity: 0.05;
     overflow: hidden;
     bottom: 20px;
